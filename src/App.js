@@ -1,16 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Saludo from './components/Saludo';
+import ConHijos from './components/ConHijos';
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
+
   return (
     <>
-    <h1>Hola mundo, ahora con React!</h1>
-    <ul>
-      <li>1</li>
-      <li>{1+1}</li>
-      <li>{2+1}</li>
-      <li>{3+1}</li>
-    </ul>
+      <NavBar/>
+      <ItemListContainer greeting="Bienvenidos"/> 
     </>
   );
 }
