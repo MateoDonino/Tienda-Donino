@@ -1,24 +1,46 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-const Contador = () => {
+const Contador = ({initial, product}) => {
 
-    const [suma, setSuma] = useState(0)
+    const [cantidad, setCantidad] = useState(initial)
 
-    useEffect( ()=>{
-        console.log("Efecto en cambio suma");
-    }, [suma])
+	const handleAdd = () => {
+		if (cantidad < product.stock) {
+			setCantidad(cantidad + 1)
+		}
+	}
+	const handleRemove = () => {
+		if (cantidad > initial) {
+			setCantidad(cantidad - 1)
+		}
+	}
 
-    const onClickHandler = () => {
-        console.log("click")
-        setSuma(suma + 1) //Esto no -> suma++ -> suma = suma + 1
-    }
+	return (
+		<>
+			<div className="d-flex flex-column ">
+				<div className="btns-count">
+					<button className="btn btn-block" onClick={handleRemove}>
+						<i className="fas fa-minus"></i>
+					</button>
+					<label className="alert alert-white cantidad-items">{cantidad}</label>
+					<button className="btn btn-block" onClick={handleAdd}>
+						<i className="fas fa-plus"></i>
+					</button>
+				</div>
 
-    return (
-        <div>
-            <button onClick={onClickHandler} className="btn btn-primary" type="submit">Click acá</button>
-            {suma}
-        </div>
-    )
+				<div className="agreg-carrito">
+					<button
+						className="btn bg-primary text-white btn-block "
+						onClick={() =>
+							alert(`Agregaste ${cantidad} ${product.title} al carrito`)
+						}
+					>
+						Agregar al Carrito
+					</button>
+				</div>
+			</div>
+		</>
+	)
 }
 
 export default Contador

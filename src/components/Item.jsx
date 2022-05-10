@@ -1,24 +1,36 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
-const Item = ({ producto }) => {
-	const { title, price, picUrl, brand } = producto
+const Item = ({ title, price, img, brand, id }) => {
 	return (
-		<>
-			<div className="col-md-4">
-				<div className="card card-compact w-96 bg-base-100 shadow-xl">
-					<figure>
-						<img src={picUrl} alt="Shoes" />
-					</figure>
-					<div className="card-body">
-						<h2 className="card-title">{title}</h2>
-						<p>{price}</p>
-						<div className="card-actions justify-end">
-							<button className="btn btn-primary">Ver más</button>
+		<div className="col itemListCol mb-2 ">
+			<div className="d-flex justify-content-center align-items-center">
+				<div className="card p-3 w-100">
+					<div className="d-flex justify-content-evenly align-items-center ">
+						<div className="mt-2">
+							<h4 className="text-uppercase">${price}</h4>
+							<div className="mt-5">
+								<h1 className="main-heading mt-0">{brand}</h1>
+								<h5 className="text-uppercase mb-0">{title}</h5>
+							</div>
+						</div>
+						<div className="image">
+							<img src={img} width="200" alt="" />
+						</div>
+					</div>
+					<div className="row">
+						<div className="col ver-mas mt-4">
+							<Link
+								to={`/item/${id}`}
+								className="w-100 btn d-block bg-primary text-white"
+							>
+								Ver mas
+							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }
 
