@@ -1,17 +1,17 @@
 import { useState } from "react"
 
-const Contador = ({initial, product}) => {
+const ItemCount = ({stock, onAdd}) => {
 
-    const [cantidad, setCantidad] = useState(initial)
+    const [count, setCount] = useState(0)
 
 	const handleAdd = () => {
-		if (cantidad < product.stock) {
-			setCantidad(cantidad + 1)
+		if (count < stock) {
+			setCount(count + 1)
 		}
 	}
 	const handleRemove = () => {
-		if (cantidad > initial) {
-			setCantidad(cantidad - 1)
+		if (count > stock) {
+			setCount(count - 1)
 		}
 	}
 
@@ -22,18 +22,17 @@ const Contador = ({initial, product}) => {
 					<button className="btn btn-block" onClick={handleRemove}>
 						<i className="fas fa-minus"></i>
 					</button>
-					<label className="alert alert-white cantidad-items">{cantidad}</label>
+					<label className="alert alert-white cantidad-items">{count}</label>
 					<button className="btn btn-block" onClick={handleAdd}>
 						<i className="fas fa-plus"></i>
 					</button>
 				</div>
-
 				<div className="agreg-carrito">
+					<hr />
+					<hr />
 					<button
 						className="btn bg-primary text-white btn-block "
-						onClick={() =>
-							alert(`Agregaste ${cantidad} ${product.title} al carrito`)
-						}
+						onClick={() => onAdd(count)}
 					>
 						Agregar al Carrito
 					</button>
@@ -43,4 +42,4 @@ const Contador = ({initial, product}) => {
 	)
 }
 
-export default Contador
+export default ItemCount

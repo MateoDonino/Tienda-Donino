@@ -1,32 +1,42 @@
-import React from 'react'
-import Contador from './Contador'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import ItemCount from './ItemCount'
 
-const ItemDetail = ({product}) => {
-    return (
+const ItemDetail = ({ product }) => {
+
+	const { title, description, price, picUrl, stock } = product
+	
+	const [terminar, setTerminar] = useState(false)
+	
+	const onAdd = (count) => {
+		setTerminar(true)
+		console.log(count);
+	}
+	
+	return (
 		<>
-			<div className=" d-flex justify-content-center align-items-center shadow">
-				<div className="card w-100 ">
-					<div className="d-flex justify-content-between align-items-center container w-75 ">
-						<div className="row">
-							<div className="col-lg-6">
-								<div className="mt-2">
-									<div className="mt-5">
-										<h2 className="main-heading mt-0">{product.brand}</h2>
-										<h3 className="text-uppercase mb-0">{product.title}</h3>
-										<h3 className="text-uppercase">${product.price}</h3>
-										<hr />
-										<h3>Descripción: </h3>
-										<p>{product.description}</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-6">
-								<div className="">
-									<img src={product.picUrl} className="img-fluid mt-3" alt="" />
-								</div>
-								<div className="mb-4">
-									<Contador product={product} initial={1} />
-								</div>
+			<div className='Card'>
+				<div className="card w-96 bg-base-100 shadow-xl">
+					<figure className="px-10 pt-10">
+						<img src={picUrl} alt="" className="rounded-xl" />
+					</figure>
+					<hr />
+					<div className="card-body items-center text-center">
+						<h2 className="card-title">{title}</h2>
+						<h1>Descripción</h1>
+						<p>{description}</p>
+						<h1>Precio</h1>
+						<p>$ {price}</p>
+						<hr />
+						<div className="card-actions">
+							<div classNameName="mb-4">
+								{terminar ? (
+									<Link to="/CartWidget" className="btn bg-primary text-white btn-block ">
+										Terminar Compra
+									</Link>
+								):(
+								<ItemCount stock={stock} onAdd={onAdd} />
+								)}
 							</div>
 						</div>
 					</div>

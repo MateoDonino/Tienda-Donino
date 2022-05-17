@@ -38,6 +38,11 @@
 }
 
 li {
-  color: brown;
+  color: rgb(20, 21, 83);
   padding: 10px;
+}
+
+.Card {
+  padding: 10px;
+  margin: 10px;
 }

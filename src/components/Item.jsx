@@ -3,21 +3,16 @@ import { Link } from "react-router-dom"
 
 const Item = ({ title, price, img, brand, id }) => {
 	return (
-		<div className="col itemListCol mb-2 ">
-			<div className="d-flex justify-content-center align-items-center">
-				<div className="card p-3 w-100">
-					<div className="d-flex justify-content-evenly align-items-center ">
-						<div className="mt-2">
-							<h4 className="text-uppercase">${price}</h4>
-							<div className="mt-5">
-								<h1 className="main-heading mt-0">{brand}</h1>
-								<h5 className="text-uppercase mb-0">{title}</h5>
-							</div>
-						</div>
-						<div className="image">
-							<img src={img} width="200" alt="" />
-						</div>
-					</div>
+		
+	<div className="Card">
+		<div className="card card-compact w-96 bg-base-100 shadow-xl">
+			<figure><img src={img} alt="" /></figure>
+			<hr />
+			<div className="card-body">
+				<h2 className="card-title">{title}</h2>
+				<h2 className="card-brand">{brand}</h2>
+				<h3>${price}</h3>
+				<div className="card-actions justify-end">
 					<div className="row">
 						<div className="col ver-mas mt-4">
 							<Link
@@ -31,7 +26,8 @@ const Item = ({ title, price, img, brand, id }) => {
 				</div>
 			</div>
 		</div>
-	)
+	</div>
+)
 }
 
 export default Item
