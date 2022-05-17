@@ -4,7 +4,7 @@ import ItemCount from './ItemCount'
 
 const ItemDetail = ({ product }) => {
 
-	const { title, description, price, picUrl, stock } = product
+	const { title, description, price, picUrl, stock, id } = product
 	
 	const [terminar, setTerminar] = useState(false)
 	
@@ -35,7 +35,7 @@ const ItemDetail = ({ product }) => {
 										Terminar Compra
 									</Link>
 								):(
-								<ItemCount stock={stock} onAdd={onAdd} />
+								<ItemCount stock={stock} onAdd={onAdd} id={id}/>
 								)}
 							</div>
 						</div>
