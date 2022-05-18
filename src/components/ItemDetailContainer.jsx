@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getItem } from '../services/asyncmock'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { getItem } from "../services/asyncmock"
+import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
 	const [product, setProduct] = useState({})
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 	console.log(product)
 
 	return (
-		<div className="container mt-3">
+		<div className="mt-3">
 			<ItemDetail product={product} />
 		</div>
 	)

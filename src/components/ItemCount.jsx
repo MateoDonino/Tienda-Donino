@@ -2,11 +2,11 @@ import { useState } from "react"
 import { useAppContext } from "./context/AppContext"
 import { useCartContext } from "./context/CartContext"
 
-const ItemCount = ({stock, onAdd, id}) => {
+const ItemCount = ({ stock, onAdd, id }) => {
 	const [count, setCount] = useState(0)
 
-	const {addToCart} = useCartContext()
-	const {products} = useAppContext()
+	const { addToCart } = useCartContext()
+	const { products } = useAppContext()
 
 	const handleAdd = () => {
 		if (count < stock) {
@@ -14,15 +14,15 @@ const ItemCount = ({stock, onAdd, id}) => {
 		}
 	}
 	const handleRemove = () => {
-		if (count > stock) {
+		if (count > 1) {
 			setCount(count - 1)
 		}
 	}
 
-	const handleClick = (id, cantidad) =>{
+	const handleClick = (id, cantidad) => {
 		const findProduct = products.find((producto) => producto.id === id)
 
-		if(!findProduct){
+		if (!findProduct) {
 			alert("Error")
 			return
 		}
@@ -33,21 +33,21 @@ const ItemCount = ({stock, onAdd, id}) => {
 
 	return (
 		<>
-			<div className="d-flex flex-column ">
-				<div className="btns-count">
-					<button className="btn btn-block" onClick={handleRemove}>
-						<i className="fas fa-minus"></i>
-					</button>
-					<label className="alert alert-white cantidad-items">{count}</label>
-					<button className="btn btn-block" onClick={handleAdd}>
-						<i className="fas fa-plus"></i>
-					</button>
+			<div className="d-flex flex-column">
+				<div className="btns-count">						
+						<div className="flex mt-4">
+							<button className="btn btn-ghost" onClick={handleRemove}>
+								<i className="fas fa-minus"></i>
+							</button>
+							<label className="alert alert-white cantidad-items">{count}</label>
+							<button className="btn btn-ghost " onClick={handleAdd}>
+								<i className="fas fa-plus"></i>
+							</button>
+						</div>
 				</div>
-				<div className="agreg-carrito">
-					<hr />
-					<hr />
+				<div className="agreg-carrito mt-4">
 					<button
-						className="btn bg-primary text-white btn-block "
+						className="btn bg-yellow-700 text-stone-900 btn-block "
 						onClick={() => handleClick(id, count)}
 					>
 						Agregar al Carrito

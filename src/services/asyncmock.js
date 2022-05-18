@@ -43,6 +43,29 @@ const products = [
 		picUrl:
 			"https://spacegamer.com.ar/img/Public/1058-producto-1c-1373.jpg",
 	},
+	
+	{
+		id: 5,
+		title: "Corsair Vengeance LPX DDR4 3200 PC4-25600 16GB 2X8GB CL16 Negro",
+		price: 9200,
+		brand: "Corsair",
+		description: "La memoria Corsair Vengeance LPX se ha diseñado para overclocking de alto rendimiento. El disipador de calor, fabricado en aluminio puro, permite una disipación térmica más rápida, la placa impresa de ocho capas administra el calor y proporciona una capacidad superior para incrementar el overclocking.",
+		category: "memoriasram",
+		stock: "3",
+		picUrl:
+			"https://thumb.pccomponentes.com/w-530-530/articles/26/262822/corsair-vengeance-lpx-ddr4-3200-pc4-25600-16gb-2x8gb-cl16-negro.jpg",
+	},
+	{
+		id: 6,
+		title: "Gigabyte Radeon RX 6600 XT GAMING OC 8GB GDDR6",
+		price: 53250,
+		brand: "AMD",
+		description: "El sistema de enfriamiento WINDFORCE 3X de la Radeon ™ RX 6600 XT GAMING OC cuenta con 3 ventiladores de cuchilla únicos de 80 mm, giro alternativo, 3 tubos de calor de cobre compuestos, GPU de contacto directo, ventilador activo 3D y enfriamiento de pantalla, que en conjunto brindan una disipación de calor de alta eficiencia.",
+		category: "placasdevideo",
+		stock: "5",
+		picUrl:
+			"https://thumb.pccomponentes.com/w-530-530/articles/51/514409/1821-gigabyte-radeon-rx-6600-xt-gaming-oc-8gb-gddr6.jpg",
+	},
 ]
 
 const task = new Promise((resp) => {
