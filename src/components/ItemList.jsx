@@ -2,7 +2,6 @@ import React from "react"
 import Item from "./Item"
 
 const ItemList = ({ category }) => {
-	console.log(category)
 	return (
 		<>
 			<div className="container mx-auto flex flex-wrap gap-4 justify-center">

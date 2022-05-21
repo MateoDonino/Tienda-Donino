@@ -5,7 +5,7 @@ const products = [
 		price: 8500,
 		brand: "Kingston",
 		description: "El ultrarrápido FURY ™ Renegade DDR4 RGB 1 es la actualización perfecta para el jugador que quiere un rendimiento de vanguardia y un estilo RGB brillante en su sistema basado en AMD o Intel. Los efectos de iluminación RGB dinámicos utilizan la tecnología patentada Infrared Sync Technology ™ de Kingston FURY para proporcionar efectos de iluminación suaves y sincronizados.",
-		category: "memoriasram",
+		category: "memorias-ram",
 		stock: "6",
 		picUrl:
 			"https://spacegamer.com.ar/img/Public/1058-producto-concepto-6145205-3757.jpg",
@@ -38,7 +38,7 @@ const products = [
 		price: 189990,
 		brand: "GeForce RTX",
 		description: "Velocidad en cada lectura. Cuenta con 5888 núcleos, por lo que la interfaz de la placa será algo sorprendente. Este tipo de estructura es apropiado para el procesamiento de tecnologías más complejas y modernas caracterizadas por grandes volúmenes de datos.",
-		category: "placasdevideo",
+		category: "placas-de-video",
 		stock: "6",
 		picUrl:
 			"https://spacegamer.com.ar/img/Public/1058-producto-1c-1373.jpg",
@@ -50,7 +50,7 @@ const products = [
 		price: 9200,
 		brand: "Corsair",
 		description: "La memoria Corsair Vengeance LPX se ha diseñado para overclocking de alto rendimiento. El disipador de calor, fabricado en aluminio puro, permite una disipación térmica más rápida, la placa impresa de ocho capas administra el calor y proporciona una capacidad superior para incrementar el overclocking.",
-		category: "memoriasram",
+		category: "memorias-ram",
 		stock: "3",
 		picUrl:
 			"https://thumb.pccomponentes.com/w-530-530/articles/26/262822/corsair-vengeance-lpx-ddr4-3200-pc4-25600-16gb-2x8gb-cl16-negro.jpg",
@@ -61,7 +61,7 @@ const products = [
 		price: 53250,
 		brand: "AMD",
 		description: "El sistema de enfriamiento WINDFORCE 3X de la Radeon ™ RX 6600 XT GAMING OC cuenta con 3 ventiladores de cuchilla únicos de 80 mm, giro alternativo, 3 tubos de calor de cobre compuestos, GPU de contacto directo, ventilador activo 3D y enfriamiento de pantalla, que en conjunto brindan una disipación de calor de alta eficiencia.",
-		category: "placasdevideo",
+		category: "placas-de-video",
 		stock: "5",
 		picUrl:
 			"https://thumb.pccomponentes.com/w-530-530/articles/51/514409/1821-gigabyte-radeon-rx-6600-xt-gaming-oc-8gb-gddr6.jpg",

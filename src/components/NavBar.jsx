@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget"
 const NavBar = () => {
 	return (
 		<>
-			<div className="navbar bg-base-100">
+			<div className="navbar bg-base-100 mt-4">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<label tabindex="0" className="btn btn-ghost btn-circle">
@@ -27,20 +27,20 @@ const NavBar = () => {
 							tabindex="0"
 							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 						>
-							<Link className="nav-link active" to="/category/memoriasram">
+							<Link className="nav-link active" to="/category/memorias-ram">
 								<li>Memorias RAM</li>
 							</Link>
 							<Link className="nav-link active" to="/category/monitores">
 								<li>Monitores</li>
 							</Link>
-							<Link className="nav-link active" to="/category/placasdevideo">
+							<Link className="nav-link active" to="/category/placas-de-video">
 								<li>Placas de Video</li>
 							</Link>
 						</ul>
 					</div>
 				</div>
 				<div className="navbar-center">
-					<Link className="btn btn-ghost normal-case text-xl" to="/">
+					<Link className="btn btn-ghost normal-case text-2xl" to="/">
 						Tienda de PC
 					</Link>
 				</div>

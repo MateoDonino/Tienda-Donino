@@ -15,10 +15,10 @@ const ItemDetail = ({ product }) => {
 	return (
 		<>
 			<div className="hero w-100">
-				<div className="hero-content bg-green-800 mt-5 rounded border-2 border-yellow-700 flex-col lg:flex-row">
+				<div className="hero-content bg-stone-800 mt-5 rounded border-2 border-black flex-col lg:flex-row">
 					<img
 						src={picUrl}
-						className="max-w-sm rounded-lg border-4 border-yellow-700 shadow-2xl"
+						className="max-w-sm rounded-lg border-4 border-violet-700 shadow-2xl"
 						alt={`${title} de ${brand}`}
 					 />
 					<div>
@@ -32,7 +32,7 @@ const ItemDetail = ({ product }) => {
 							{terminar ? (
 								<Link
 									to="/cart"
-									className="btn bg-yellow-700 text-stone-900 btn-block"
+									className="btn mt-4 bg-violet-700 text-white btn-block"
 								>
 									Terminar Compra
 								</Link>

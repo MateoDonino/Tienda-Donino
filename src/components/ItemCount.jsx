@@ -47,7 +47,7 @@ const ItemCount = ({ stock, onAdd, id }) => {
 				</div>
 				<div className="agreg-carrito mt-4">
 					<button
-						className="btn bg-yellow-700 text-stone-900 btn-block "
+						className="btn bg-violet-700 text-white btn-block "
 						onClick={() => handleClick(id, count)}
 					>
 						Agregar al Carrito
