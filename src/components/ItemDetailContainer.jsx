@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {useParams} from "react-router-dom"
 import {useAppContext} from "./context/AppContext"
-import {getItemm} from "./firebase/firebaseService"
+import {getItem} from "./firebase/firebaseService"
 import ItemDetail from "./ItemDetail"
 
 const ItemDetailContainer = () => {
@@ -12,9 +12,7 @@ const ItemDetailContainer = () => {
 	const {id} = useParams()
 
 	useEffect(() => {
-		getItemm(id).then((item) =>
-			setProductClicked({...item.data(), id: item.id})
-		)
+		getItem(id).then((item) => setProductClicked({...item.data(), id: item.id}))
 	}, [id, products])
 
 	// Funcion onAdd

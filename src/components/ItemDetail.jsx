@@ -26,7 +26,7 @@ const ItemDetail = ({product, terminar, onAdd}) => {
 							</span>
 							{terminar ? (
 								<Link
-									to="/cart"
+									to={"/cart"}
 									className="btn mt-4 bg-violet-700 text-white btn-block"
 								>
 									Terminar Compra

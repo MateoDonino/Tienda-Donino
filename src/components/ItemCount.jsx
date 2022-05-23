@@ -2,14 +2,14 @@ import {useState} from "react"
 import {useAppContext} from "./context/AppContext"
 import {useCartContext} from "./context/CartContext"
 
-const ItemCount = ({stock, onAdd, id}) => {
+const ItemCount = ({product, onAdd, initial}) => {
 	const [count, setCount] = useState(1)
 
 	const {addToCart} = useCartContext()
 	const {products} = useAppContext()
 
 	const handleAdd = () => {
-		if (count < stock) {
+		if (count < product.stock) {
 			setCount(count + 1)
 		}
 	}
@@ -28,7 +28,7 @@ const ItemCount = ({stock, onAdd, id}) => {
 		}
 
 		addToCart(findProduct, cantidad)
-		onAdd(count)
+		//onAdd(count)
 	}
 
 	return (
@@ -48,7 +48,7 @@ const ItemCount = ({stock, onAdd, id}) => {
 				<div className="agreg-carrito mt-4">
 					<button
 						className="btn bg-violet-700 text-white btn-block "
-						onClick={() => handleClick(id, count)}
+						onClick={() => handleClick(product.id, count)}
 					>
 						Agregar al Carrito
 					</button>

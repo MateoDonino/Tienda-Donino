@@ -32,7 +32,7 @@ export const getItems = async () => {
 }
 
 // Trae UN item
-export const getItemm = async (id) => {
+export const getItem = async (id) => {
 	const item = await getDoc(doc(db, "items", id))
 	return item
 }
