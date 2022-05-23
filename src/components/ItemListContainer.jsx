@@ -1,26 +1,28 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import { getItem } from "../services/asyncmock"
+import {useEffect, useState} from "react"
+import {useParams} from "react-router-dom"
+import {getItem} from "../services/asyncmock"
+import {useAppContext} from "./context/AppContext"
 import ItemList from "./ItemList"
 
 const ItemListContainer = () => {
-	const { categoryId } = useParams()
-	const [category, setCategory] = useState()
+	const {products} = useAppContext()
+
+	const [productsCategory, setProductsCategory] = useState([])
+
+	const {categoryId} = useParams()
 
 	useEffect(() => {
-		if (categoryId === undefined) {
-			getItem().then((resp) => setCategory(resp))
-		} else {
-			getItem().then((resp) =>
-				setCategory(resp.filter((product) => product.category === categoryId))
-			)
-		}
-	}, [categoryId])
+		!categoryId
+			? setProductsCategory(products)
+			: setProductsCategory(
+					products.filter((product) => product.category === categoryId)
+			  )
+	}, [categoryId, products])
 
 	return (
 		<>
 			<div className="mt-4">
-				<ItemList category={category} />
+				<ItemList products={productsCategory} />
 			</div>
 		</>
 	)
