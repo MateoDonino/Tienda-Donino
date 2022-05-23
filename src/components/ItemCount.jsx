@@ -28,7 +28,7 @@ const ItemCount = ({product, onAdd, initial}) => {
 		}
 
 		addToCart(findProduct, cantidad)
-		//onAdd(count)
+		onAdd(count)
 	}
 
 	return (

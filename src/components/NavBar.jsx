@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 import CartWidget from "./CartWidget"
 
 const NavBar = () => {
@@ -45,7 +45,9 @@ const NavBar = () => {
 					</Link>
 				</div>
 				<div className="navbar-end">
-					<CartWidget />
+					<Link to={"/cart"}>
+						<CartWidget />
+					</Link>
 				</div>
 			</div>
 		</>

@@ -67,66 +67,74 @@ const Cart = () => {
 	return (
 		<>
 			<div>
-				<h1>Resumen de la compra</h1>
-			</div>
-			<div>
-				<div className="container mx-auto">
-					{cart.length > 0 ? (
-						cart.map((product) => (
-							<CartItem key={product.id} product={product} />
-						))
-					) : (
-						<h1>No hay productos.</h1>
-					)}
+				<div className="text-center mt-4 text-3xl">
+					<h1>Resumen de la compra</h1>
 				</div>
 				<div>
-					{cart.length !== 0 && (
-						<>
-							<div className="card container">
-								<h2 className="mt-3 ">Resumen Carrito</h2>
-
-								{cart.map((prod) => (
-									<CartResume key={prod.id} prod={prod} />
-								))}
-
-								<h3>Total a pagar: ${total}</h3>
-
-								<hr />
-								<p>Completa con tus datos para finalizar la compra</p>
-								<form
-									onSubmit={handlerSubmit}
-									onChange={handlerChange}
-									className="d-flex flex-column align-center container mt-2 mb-3"
-								>
-									<input
-										className="form-control mb-2"
-										type="text"
-										placeholder="Nombre"
-										name="name"
-										value={order.name}
-									/>
-									<input
-										className="form-control mb-2"
-										type="number"
-										placeholder="Telefono"
-										name="phone"
-										value={order.phone}
-									/>
-									<input
-										className="form-control mb-2"
-										type="email"
-										placeholder="Email"
-										name="email"
-										value={order.email}
-									/>
-
-									<button className="btn btn-success d-block mt-2">
-										Enviar orden
-									</button>
-								</form>
+					<div className="container mx-auto">
+						{cart.length > 0 ? (
+							cart.map((product) => (
+								<CartItem key={product.id} product={product} />
+							))
+						) : (
+							<div className="text-center mt-4 text-3xl">
+								<h1>No hay productos.</h1>
 							</div>
-						</>
-					)}
+						)}
+					</div>
+					<div className="container border mt-4 mx-auto">
+						{cart.length !== 0 && (
+							<>
+								<div className="card text-center">
+									<h2 className="mt-4 text-3xl">Resumen Carrito</h2>
+
+									<div className="mt-4 text-3xl">
+										{cart.map((prod) => (
+											<CartResume key={prod.id} prod={prod} />
+										))}
+									</div>
+
+									<h3 className="mt-4 text-3xl">Total a pagar: ${total}</h3>
+
+									<hr />
+									<p className="mt-4 text-3xl">
+										Completa con tus datos para finalizar la compra
+									</p>
+									<form
+										onSubmit={handlerSubmit}
+										onChange={handlerChange}
+										className="d-flex flex-column align-center container mt-2 mb-3"
+									>
+										<input
+											className="form-control mb-2"
+											type="text"
+											placeholder="Nombre"
+											name="name"
+											value={order.name}
+										/>
+										<input
+											className="form-control mb-2"
+											type="number"
+											placeholder="Telefono"
+											name="phone"
+											value={order.phone}
+										/>
+										<input
+											className="form-control mb-2"
+											type="email"
+											placeholder="Email"
+											name="email"
+											value={order.email}
+										/>
+
+										<button className="btn btn-success d-block mt-4">
+											Enviar orden
+										</button>
+									</form>
+								</div>
+							</>
+						)}
+					</div>
 				</div>
 			</div>
 		</>

@@ -9,30 +9,21 @@ const ItemDetailContainer = () => {
 
 	const [productClicked, setProductClicked] = useState({})
 
+	const [loading, setLoading] = useState(true)
+
 	const {id} = useParams()
 
 	useEffect(() => {
-		getItem(id).then((item) => setProductClicked({...item.data(), id: item.id}))
+		getItem(id)
+			.then((item) => setProductClicked({...item.data(), id: item.id}))
+			.then(() => setLoading(false))
 	}, [id, products])
-
-	// Funcion onAdd
-	const [terminar, setTerminar] = useState(false)
-	const ondAdd = () => {
-		setTerminar(true)
-	}
 
 	return (
 		<>
 			<div className="mt-3">
-				{
-					//loading && <h1 className="text-3xl text-center mt-4">Cargando ...</h1>}
-					//{//!loading &&
-					<ItemDetail
-						product={productClicked}
-						ondAdd={ondAdd}
-						terminar={terminar}
-					/>
-				}
+				{loading && <h1 className="text-3xl text-center mt-4">Cargando ...</h1>}
+				{!loading && <ItemDetail product={productClicked} />}
 			</div>
 		</>
 	)

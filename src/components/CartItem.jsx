@@ -5,8 +5,8 @@ const CartItem = ({product}) => {
 	const {deleteFromCart} = useCartContext()
 
 	return (
-		<div className="card mt-4 card-side bg-base-100 shadow-xl">
-			<figure>
+		<div className="card mt-4 border-2 border-black card-side bg-base-100 shadow-xl">
+			<figure className="w-96 border-4 border-violet-700">
 				<img src={product.picUrl} alt="" />
 			</figure>
 			<div className="card-body">

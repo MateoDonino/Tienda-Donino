@@ -2,7 +2,12 @@ import React, {useState} from "react"
 import {Link} from "react-router-dom"
 import ItemCount from "./ItemCount"
 
-const ItemDetail = ({product, terminar, onAdd}) => {
+const ItemDetail = ({product}) => {
+	const [terminar, setTerminar] = useState(false)
+	const onAdd = () => {
+		setTerminar(true)
+	}
+
 	return (
 		<>
 			<div className="hero w-100">
