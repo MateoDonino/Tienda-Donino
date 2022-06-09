@@ -81,56 +81,66 @@ const Cart = () => {
 						</div>
 					)}
 				</div>
-				<div className="hero w-100">
-					<div className="hero-content bg-stone-800 mt-5 rounded border-2 border-black flex-col lg:flex-row">
-						{cart.length !== 0 && (
-							<>
-								<div className="card text-center">
-									<h2 className="mt-4 text-3xl font-mono">Resumen Carrito</h2>
+				{cart.length !== 0 && (
+					<>
+						<div className="card-actions justify-center mt-4">
+							<button
+								onClick={() => deleteCart()}
+								className="w-100 btn d-block bg-red-700 text-white"
+							>
+								Eliminar todo
+							</button>
+						</div>
+						<div className="hero w-100">
+							<div className="hero-content bg-stone-800 mt-5 rounded border-2 border-black flex-col lg:flex-row">
+								<>
+									<div className="card text-center">
+										<h2 className="mt-4 text-3xl font-mono">Resumen Carrito</h2>
 
-									<h3 className="mt-4 text-2xl">Total a pagar: ${total}</h3>
+										<h3 className="mt-4 text-2xl">Total a pagar: ${total}</h3>
 
-									<hr />
-									<p className="mt-4 text-2xl">
-										Completa con tus datos para finalizar la compra.
-									</p>
-									<form
-										onSubmit={handlerSubmit}
-										onChange={handlerChange}
-										className="mt-4 mb-3"
-									>
-										<div className="">
-											<input
-												className="mb-2 border-2 border-l-black"
-												type="text"
-												placeholder="Nombre"
-												name="name"
-												value={order.name}
-											/>
-											<input
-												className="mb-2 border-2 border-x-black"
-												type="number"
-												placeholder="Telefono"
-												name="phone"
-												value={order.phone}
-											/>
-											<input
-												className="mb-2 border-2 border-r-black"
-												type="email"
-												placeholder="Email"
-												name="email"
-												value={order.email}
-											/>
-										</div>
-										<button className="btn btn-success d-block mt-4">
-											Enviar orden
-										</button>
-									</form>
-								</div>
-							</>
-						)}
-					</div>
-				</div>
+										<hr />
+										<p className="mt-4 text-2xl">
+											Completa con tus datos para finalizar la compra.
+										</p>
+										<form
+											onSubmit={handlerSubmit}
+											onChange={handlerChange}
+											className="mt-4 mb-3"
+										>
+											<div className="">
+												<input
+													className="mb-2 border-2 border-l-black"
+													type="text"
+													placeholder="Nombre"
+													name="name"
+													value={order.name}
+												/>
+												<input
+													className="mb-2 border-2 border-x-black"
+													type="number"
+													placeholder="Telefono"
+													name="phone"
+													value={order.phone}
+												/>
+												<input
+													className="mb-2 border-2 border-r-black"
+													type="email"
+													placeholder="Email"
+													name="email"
+													value={order.email}
+												/>
+											</div>
+											<button className="btn btn-success d-block mt-4">
+												Enviar orden
+											</button>
+										</form>
+									</div>
+								</>
+							</div>
+						</div>
+					</>
+				)}
 			</div>
 		</>
 	)

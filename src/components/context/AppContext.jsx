@@ -1,5 +1,4 @@
 import React, {createContext, useContext, useEffect, useState} from "react"
-import {getItem} from "../../services/asyncmock"
 import {getItems} from "../firebase/firebaseService"
 
 const AppContext = createContext()

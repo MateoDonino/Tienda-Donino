@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react"
 import {useParams} from "react-router-dom"
-import {getItem} from "../services/asyncmock"
 import {useAppContext} from "./context/AppContext"
 import ItemList from "./ItemList"
 
