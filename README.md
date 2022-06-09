@@ -20,7 +20,7 @@ ___
     - Utilizada para crear alerts con estilo amigable y mostrar tanto errores como procedimientos terminados.
 
 ___
-![GIF muestra] (https://i.ibb.co/9qBxyW2/Recorrido-tienda.gif)
+![GIF muestra](https://i.ibb.co/9qBxyW2/Recorrido-tienda.gif)
 
 ___
 ## Installation
